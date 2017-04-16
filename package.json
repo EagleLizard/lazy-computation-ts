@@ -1,0 +1,14 @@
+{
+  "name": "lazy-computation",
+  "version": "1.0.0",
+  "description": "Demonstrate Lazy Computation in TS",
+  "main": "main.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "./run.sh"
+  },
+  "author": "EagleLizard",
+  "license": "MIT"
+}
