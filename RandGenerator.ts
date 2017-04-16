@@ -1,4 +1,6 @@
 
+const DEFAULT_CHARSET:string[] = Array(52).fill(0).map((n,i)=>String.fromCharCode(i<26?i+65:i+71));
+
 export default class RandGenerator {
   
   constructor(){}
@@ -23,6 +25,14 @@ export default class RandGenerator {
       ints[i]= RandGenerator.randInt(min, max);
     }
     return ints;
+  }
+  
+  static getRandString(length:number, charset?:Array<string>):string{
+    let charsetIdx:number;
+    if(charset === void 0) charset = DEFAULT_CHARSET;
+    return Array(length).fill('').map(str=>
+      charset[RandGenerator.randInt(charset.length-1)]
+    ).join('');
   }
   
 }
