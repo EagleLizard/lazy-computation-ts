@@ -1,3 +1,3 @@
 #!/bin/bash
- rm -f ./*.js && rm -f ./*.js.map
- rm -rf ./*/*.js && rm -f ./*/*.js.map
+ find . -name "*.js" -type f -delete
+ find . -name "*.js.map" -type f -delete

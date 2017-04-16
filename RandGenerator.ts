@@ -27,12 +27,30 @@ export default class RandGenerator {
     return ints;
   }
   
-  static getRandString(length:number, charset?:Array<string>):string{
+  static getRandString(lengthMin:number, lengthMax?:number, charset?:Array<string>):string{
     let charsetIdx:number;
+    let length:number;
+    length = (lengthMax === void 0)
+      ? lengthMin
+      : RandGenerator.randInt(lengthMin, lengthMax) ;
     if(charset === void 0) charset = DEFAULT_CHARSET;
     return Array(length).fill('').map(str=>
       charset[RandGenerator.randInt(charset.length-1)]
     ).join('');
+  }
+  
+  static getRandStrings(
+      numStrings:number
+    , lengthMin:number
+    , lengthMax?:number
+    , charset?:Array<string>
+  ): Array<string> {
+    
+    return Array(numStrings)
+      .fill('')
+      .map(str=>
+        RandGenerator.getRandString(lengthMin, lengthMax, charset)
+      );
   }
   
 }
