@@ -6,7 +6,5 @@ import MangleTest from './tests/MangleTest/MangleTest';
 main();
 
 function main():void{
-  // AddPlannerTest.run();
-  // SplitPlannerTest.run();
   MangleTest.run();
 }

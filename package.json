@@ -10,5 +10,8 @@
     "test": "./run.sh"
   },
   "author": "EagleLizard",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^6.0.69"
+  }
 }

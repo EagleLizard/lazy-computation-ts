@@ -44,11 +44,15 @@ export default class RandGenerator {
     , lengthMin:number
     , lengthMax?:number
     , charset?:Array<string>
+    , recycledArr?:Array<string>
   ): Array<string> {
-    
-    return Array(numStrings)
-      .fill('')
-      .map(str=>
+    let result:Array<string>;
+    if(recycledArr !== void 0){
+      result = recycledArr;
+    }else{
+      result = Array(numStrings).fill('');
+    }
+    return result.map(str=>
         RandGenerator.getRandString(lengthMin, lengthMax, charset)
       );
   }
